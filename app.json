@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Shopping list",
+    "slug": "ezwn-shoppinglist",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon-192.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "ezwn.shoppinglist",
+      "versionCode": 1,
+      "permissions": []
+    },
+    "ios": {
+      "supportsTablet": false
+    }
+  }
+}
