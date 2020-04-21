@@ -20,7 +20,11 @@ export const ArticleListProvider = ({ children }) => {
         setArticleList(newArticles);
     }
 
-    return <ArticleListContext.Provider value={{ articleList, addArticle }}>
+    async function clearArticles() {
+        setArticleList([]);
+    }
+
+    return <ArticleListContext.Provider value={{ articleList, addArticle, clearArticles }}>
         {children}
     </ArticleListContext.Provider>
 }

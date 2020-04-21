@@ -12,6 +12,7 @@ import { ArticleListProvider } from '../features/ArticleList-ctx';
 import { AddArticle } from '../features/AddArticle-cmp';
 import { ShoppingListProvider } from '../features/ShoppingList-ctx';
 import { ShoppingList } from '../features/ShoppingList-cmp';
+import { Maintenance } from '../features/Maintenance-cmp';
 
 const ShoppingListNavigationMenu = () => <NavigationMenu>
   <NavigationMenu.Choice routePath='/'>
@@ -31,6 +32,7 @@ export const ShoppingListApp = () => <NativeRouter>
           <Route exact path="/" component={ShoppingList} />
           <Route exact path="/article-list" component={ArticleList} />
           <Route exact path="/article-list/add" component={AddArticle} />
+          <Route exact path="/maintenance" component={Maintenance} />
         </VerticalBorderLayout>
       </AppViewport>
     </ShoppingListProvider>

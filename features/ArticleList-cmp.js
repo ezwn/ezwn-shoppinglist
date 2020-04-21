@@ -10,6 +10,7 @@ import { ListItem } from 'ezwn-ux-native/list/ListItem-cmp';
 
 import { ArticleListContext } from './ArticleList-ctx';
 import { ShoppingListContext } from './ShoppingList-ctx';
+import { Padded } from 'ezwn-ux-native/layouts/Padded-cmp';
 
 const ArticlesContextualMenu = () => {
 
@@ -27,16 +28,28 @@ export const ArticleList = () => {
   const { articleList } = useContext(ArticleListContext);
 
   return <VerticalBorderLayout
-    top={<TitleBar text='Articles' />}>
-    <VerticalBorderLayout
-      bottom={<ArticlesContextualMenu />}>
-      <FlatList
-        style={{ height: 1 }}
-        data={articleList}
-        renderItem={article => <Article {...article} />}
-        keyExtractor={article => article.name}
-      />
-    </VerticalBorderLayout>
+    top={<TitleBar text='Articles' />}
+    bottom={<ArticlesContextualMenu />}>
+    {
+      articleList.length !== 0
+        ? <FlatList
+          style={{ height: 1 }}
+          data={articleList}
+          renderItem={article => <Article {...article} />}
+          keyExtractor={article => article.name}
+        /> : <Padded>
+          <Text>
+            Vous n'avez entré aucun article. Les articles sont les produits
+            dont vous avez besoin régulièrement. Pour ajouter un article,
+            cliquez sur le "plus" en bas de page.
+          </Text>
+          <Text> </Text>
+          <Text>
+            Quand vous aurez créé des articles, vous pourrez les ajouter
+            à votre liste de courses en clickant dessus.
+          </Text>
+        </Padded>
+    }
   </VerticalBorderLayout>;
 }
 
