@@ -22,7 +22,11 @@ export const ShoppingListProvider = ({ children }) => {
         setShoppingList(newShoppingList);
     }
 
-    return <ShoppingListContext.Provider value={{ shoppingList, addShoppingListItem, removeShoppingListItem }}>
+    async function clearShoppingList() {
+        setShoppingList([]);
+    }
+
+    return <ShoppingListContext.Provider value={{ shoppingList, addShoppingListItem, removeShoppingListItem, clearShoppingList }}>
         {children}
     </ShoppingListContext.Provider>
 }
