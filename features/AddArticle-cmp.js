@@ -4,7 +4,6 @@ import { Text } from 'react-native';
 import { VerticalBorderLayout } from 'ezwn-ux-native/layouts/VerticalBorderLayout-cmp';
 import { TitleBar } from 'ezwn-ux-native/app-components/TitleBar-cmp';
 import { ContextualMenu } from 'ezwn-ux-native/app-components/ContextualMenu-cmp';
-import { BackTextIcon } from 'ezwn-ux-native/text-icons/BackTextIcon-cmp';
 import { AddTextIcon } from 'ezwn-ux-native/text-icons/AddTextIcon-cmp';
 import { Field } from 'ezwn-ux-native/forms/Field-cmp';
 import { TextInput } from 'ezwn-ux-native/forms/TextInput-cmp';
@@ -30,9 +29,7 @@ const AddArticleInner = () => {
   const history = useHistory();
 
   return <VerticalBorderLayout
-    top={<TitleBar text='Nouvel article' left={<TitleBar.Button onPress={() => history.goBack()}>
-      <BackTextIcon />
-    </TitleBar.Button>} />}>
+    top={<TitleBar text='Nouvel article' left={<TitleBar.BackButton />} />}>
     <VerticalBorderLayout
       bottom={<AddArticleContextualMenu />}>
 
