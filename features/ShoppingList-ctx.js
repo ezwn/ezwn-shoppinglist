@@ -13,6 +13,10 @@ export const ShoppingListProvider = ({ children }) => {
     );
 
     async function addShoppingListItem(articleName) {
+        if (shoppingList.find(item => item===articleName)) {
+            return;
+        }
+
         const newShoppingList = [...shoppingList, articleName];
         setShoppingList(newShoppingList);
     }
