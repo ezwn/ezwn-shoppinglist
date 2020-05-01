@@ -15,10 +15,10 @@ import { ShoppingList } from '../features/ShoppingList-cmp';
 import { Maintenance } from '../features/Maintenance-cmp';
 
 const ShoppingListNavigationMenu = () => <NavigationMenu>
-  <NavigationMenu.Choice routePath='/'>
+  <NavigationMenu.Choice routerPush='/'>
     <ShoppingTextIcon text='Liste de courses' />
   </NavigationMenu.Choice>
-  <NavigationMenu.Choice routePath='/article-list'>
+  <NavigationMenu.Choice routerPush='/article-list'>
     <CubesTextIcon text='Articles' />
   </NavigationMenu.Choice>
 </NavigationMenu>;

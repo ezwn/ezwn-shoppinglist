@@ -4,13 +4,11 @@ import { Text } from 'react-native';
 import { VerticalBorderLayout } from 'ezwn-ux-native/layouts/VerticalBorderLayout-cmp';
 import { TitleBar } from 'ezwn-ux-native/app-components/TitleBar-cmp';
 import { ContextualMenu } from 'ezwn-ux-native/app-components/ContextualMenu-cmp';
-import { AddTextIcon } from 'ezwn-ux-native/text-icons/AddTextIcon-cmp';
+import { OkTextIcon } from 'ezwn-ux-native/text-icons/OkTextIcon-cmp';
 import { Field } from 'ezwn-ux-native/forms/Field-cmp';
 import { TextInput } from 'ezwn-ux-native/forms/TextInput-cmp';
 
 import { AddArticleContext, AddArticleProvider } from './AddArticle-ctx';
-import { useHistory } from 'react-router';
-
 
 const AddArticleContextualMenu = () => {
 
@@ -18,7 +16,7 @@ const AddArticleContextualMenu = () => {
 
   return <ContextualMenu>
     <ContextualMenu.Choice onPress={submit}>
-      <AddTextIcon />
+      <OkTextIcon />
     </ContextualMenu.Choice>
   </ContextualMenu>;
 };
@@ -26,7 +24,6 @@ const AddArticleContextualMenu = () => {
 const AddArticleInner = () => {
 
   const { article, setArticle } = useContext(AddArticleContext);
-  const history = useHistory();
 
   return <VerticalBorderLayout
     top={<TitleBar text='Nouvel article' left={<TitleBar.BackButton />} />}>
